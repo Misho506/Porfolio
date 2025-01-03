@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: theme('colors.background.primary');
+  --foreground: theme('colors.foreground.primary');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: theme('colors.background.dark.primary');
+    --foreground: theme('colors.foreground.dark.primary');
+  }
+}
+
+body {
+  color: theme('colors.text.dark.primary') !important;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-container-size {
+  min-width: 300px;
+  max-width: 750px;
+}
+
+.custom-link {
+  color: theme('colors.shared.highlight');
+}
+
+.body-section-height {
+  height: calc(100% - 80px);
+  flex: 1;
+
+  .links {
+    color: black;
+
+    svg {
+      transition-duration: 1s;
+      width: 30px;
+      margin: 5px auto;
+      height: 30px;
+      box-shadow: 0 0 5px 0 theme('colors.shared.highlight');
+      border-radius: 5px;
+      background-color: theme('colors.shared.highlight');
+
+      &:hover {
+        margin: 7.5px auto;
+        width: 35px;
+        height: 35px;
+        transition-duration: 1s;
+      }
+    }
+  }
+}
